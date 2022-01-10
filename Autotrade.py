@@ -252,10 +252,11 @@ def sell_all():
 if __name__ == '__main__': 
     try:
         symbol_list = ['A122630', 'A252670', 'A233740', 'A250780', 'A225130',
-             'A280940', 'A261220', 'A217770', 'A295000', 'A176950']
-        bought_list = []     # 매수 완료된 종목 리스트
+             'A280940', 'A261220', 'A217770', 'A295000', 'A176950']#주식정보 제공사이트 - ETF - 거래량 순 정리 - A---코드
+             #원하는 종목 선택
+        bought_list = []     # 매수 완료된 종목 리스트 
         target_buy_count = 5 # 매수할 종목 수
-        buy_percent = 0.19   
+        buy_percent = 0.19   #몇 퍼센트씩 살 것인지
         printlog('check_creon_system() :', check_creon_system())  # 크레온 접속 점검
         stocks = get_stock_balance('ALL')      # 보유한 모든 종목 조회
         total_cash = int(get_current_cash())   # 100% 증거금 주문 가능 금액 조회
@@ -267,9 +268,9 @@ if __name__ == '__main__':
         soldout = False
 
         while True:
-            t_now = datetime.now()
+            t_now = datetime.now() # 현재시간
             t_9 = t_now.replace(hour=9, minute=0, second=0, microsecond=0)
-            t_start = t_now.replace(hour=9, minute=5, second=0, microsecond=0)
+            t_start = t_now.replace(hour=9, minute=5, second=0, microsecond=0) #LP활동시간
             t_sell = t_now.replace(hour=15, minute=15, second=0, microsecond=0)
             t_exit = t_now.replace(hour=15, minute=20, second=0,microsecond=0)
             today = datetime.today().weekday()
