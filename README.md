@@ -1,0 +1,1 @@
+# automatical-stock-system
